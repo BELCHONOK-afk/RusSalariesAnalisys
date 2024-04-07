@@ -6,9 +6,4 @@ dependencies:
   - streamlit
   - matplotlib
   - seaborn
-  - plotly
-  - ipykernel
-  - nbformat
-  - lxml
-  - openpyxl
-prefix: /Users/karantovanatolij/miniconda3/envs/streamlitenv
+prefix: /Users/karantovanatolij/miniconda3/envs/streamlitenvu
