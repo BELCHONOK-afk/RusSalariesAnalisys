@@ -23,7 +23,7 @@ def load_html_data(url, num_table= 0):
     return pd.DataFrame(df[num_table])
 
 
-#@st.cache_data
+@st.cache_data
 def load_excel_data(path):
     """
     Загрузка данных из Excel файла с выбором всех страниц в документе

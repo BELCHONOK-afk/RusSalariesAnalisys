@@ -5,7 +5,7 @@ import streamlit as st
 from functions import *
 import numpy as np
 from PIL import Image
-
+"""
 st.set_option('deprecation.showPyplotGlobalUse', False)
 sns.set_style({'axes.facecolor':'23606E',
                'figure.facecolor': '23606E', 
@@ -17,6 +17,7 @@ sns.set_style({'axes.facecolor':'23606E',
               'ytick.color': 'F5F5F5',
               'grid.color': '327E8F'})
 #sns.set_facecolor("#23606E")
+"""
 
 st.set_page_config(page_title="Home", page_icon="🗿")
 
