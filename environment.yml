@@ -1,9 +1,0 @@
-name: streamlitenv
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - streamlit
-  - matplotlib
-  - seaborn
-prefix: /Users/karantovanatolij/miniconda3/envs/streamlitenvu
