@@ -55,15 +55,15 @@ def plot_xy(values, years, title, ylabel, xlabel):
     Функция строит линейный график зависимости с сеткой
 
     """
-    plt.figure(figsize=(10,5))
-    sns.lineplot(x= years, y= values, color= '#FACFCE')
+    fig, ax = plt.subplots()
+    fig.set_size_inches(10,5)
+    sns.lineplot(x= years, y= values, color= '#FACFCE', ax=ax)
     plt.title(title)
     plt.ylabel(ylabel)
     plt.xlabel(xlabel)
     plt.xticks(years,rotation = 'vertical')
     plt.grid(True)
-    plt.tight_layout()
-    plt.show()
+    return fig
 
 
 def bar_plot(years, values, title, ylabel, xlabel):
@@ -71,8 +71,9 @@ def bar_plot(years, values, title, ylabel, xlabel):
     Функция строит столбчатую диаграмму, с надписями значений над столбцами
 
     """
-    plt.figure(figsize=(15, 7))
-    sns.barplot(x=years, y=values, color= '#99C274')
+    fig, ax = plt.subplots()
+    fig.set_size_inches(15,7)
+    sns.barplot(x=years, y=values, color= '#99C274', ax=ax)
     # Добавление значений над столбцами
     for i, value in enumerate(values):
         plt.text(i, value, f'{value:.2f}%', ha='center', va='bottom')
@@ -83,21 +84,19 @@ def bar_plot(years, values, title, ylabel, xlabel):
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.xticks(rotation=90)
-    plt.tight_layout()
-    plt.show()
+    return fig
 
 def plot_2graphs(years, values_1, values_2, title, xlabel, ylabel, label_1, label_2):
-    plt.figure(figsize=(10,5))
-    sns.lineplot(x= years, y= values_1, label= label_1, color= '#40E0D0', marker= 'o')
-    sns.lineplot(x= years, y= values_2, label= label_2, color='#FFC0CB', marker= 'o')
+    fig, ax= plt.subplots()
+    sns.lineplot(x= years, y= values_1, label= label_1, color= '#40E0D0', marker= 'o', ax= ax)
+    sns.lineplot(x= years, y= values_2, label= label_2, color='#FFC0CB', marker= 'o',ax=ax)
     plt.title(title)
     plt.legend()
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.xticks(years, rotation= 'vertical')
     plt.grid(True)
-    plt.tight_layout()
-    plt.show()
+    return fig
 
 
 

@@ -1,0 +1,10 @@
+name: stenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - streamlit
+  - seaborn
+  - openpyxl
+  - lxml
+prefix: /Users/karantovanatolij/miniconda3/envs/stenv
