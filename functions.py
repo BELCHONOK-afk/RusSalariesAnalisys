@@ -99,4 +99,10 @@ def plot_2graphs(years, values_1, values_2, title, xlabel, ylabel, label_1, labe
     return fig
 
 
+def show_df(df_1, subhed_1,df_2, subhead_2):
+    st.subheader(subhed_1)
+    st.dataframe(df_1)
+    st.subheader(subhead_2)
+    st.dataframe(df_2)
+    return None
 

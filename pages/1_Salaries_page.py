@@ -48,6 +48,16 @@ area = st.sidebar.selectbox("Сферы деятельности", areas)
 radio = st.sidebar.radio('Вывести график', 
     options=['Номинальная зарплата','Реальная зарплата VS Номинальная','Инфляция', 'Разность в зарплатах'])
 
+rw = inflation[::-1].T
+rw.columns = rw.iloc[0,:].values.astype(int)
+rw = rw.drop(index='Год', axis=1)
+show_df(interested_areas,
+        'Значения номинальных зарплат',
+        rw,
+        'Значение инфляции')
+
+
+
 if radio == 'Номинальная зарплата':
     values = interested_areas[interested_areas['Area']==area].values[0][1:]
     title=f'Номинальная зарплата в сфере {area}'
@@ -70,7 +80,14 @@ elif radio == 'Реальная зарплата VS Номинальная':
     xlabel=None
     real_label = "Реальная зарплата"
     nominal_label = "Номинальная зарплата"
-    fig = plot_2graphs(years, nominal_wage, real_wage, title, xlabel, ylabel,label_2=real_label, label_1=nominal_label)
+    fig = plot_2graphs(years, 
+                       nominal_wage, 
+                       real_wage, 
+                       title, 
+                       xlabel, 
+                       ylabel,
+                       label_2=real_label, 
+                       label_1=nominal_label)
     st.pyplot(fig, use_container_width=True)
     st.info("""
 Из графиков выше можно сделать несколько выводов:
